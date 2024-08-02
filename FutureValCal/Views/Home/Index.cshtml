@@ -1,0 +1,41 @@
+﻿@model FutureValModel
+
+<div class="card">
+
+    <div class="card-header">
+        <h3>Future Value Calculator</h3>
+    </div>
+
+</div>
+<form asp-action="Index" method="post">
+    
+    <div class="row">
+        <div class="col col-4"><label asp-for="MonthlyInvestment">Monthly Investment</label></div>
+        <div class="col col-8"><input asp-for="MonthlyInvestment" /></div>
+        <span class="text-danger" asp-validation-for="YearlyInterestRate"></span>
+    </div>
+
+    <div class="row">
+        <label asp-for="YearlyInterestRate">Interest rate</label>
+        <input asp-for="YearlyInterestRate" />
+        <span class="text-danger" asp-validation-for="YearlyInterestRate"></span>
+    </div>
+
+    <div class="row">
+        <label asp-for="Years">Years</label>
+        <input asp-for="Years" />
+        <span class="text-danger" asp-validation-for="Years"></span>
+    </div>
+
+    <div class="row">
+        <label>Future Value</label>
+        <span>@ViewBag.FutureVal</span>
+    </div>
+
+    <button type="submit">Submit</button>
+    <a asp-controller="Home" asp-action="Index">Reset</a>
+
+
+
+
+</form>
